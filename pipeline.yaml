@@ -1,0 +1,37 @@
+pipeline {
+  agent {
+    label 'Windows_Git_Node'
+  }
+  stages {
+    stage('Git-Checkout'){
+      steps {
+        echo "Checking Out from Git Repo";
+        git 'https://github.com/JosAbaafe/jenkinsPipeline.git'
+      }
+    }
+    stage('Build'){
+      steps{
+        echo "Building The Checked-out Project!";
+        bat 'Build.bat'
+      }
+    }
+    stage('Unit-Test'){
+      steps{
+        echo "Running JUnt Tests";
+        bat 'Unit.bat'
+      }
+    }
+    stage('Qualit-Gate'){
+      steps{
+        echo "Verifying Quality Gates";
+        bat 'Quality.bat'
+      }
+    }
+    stage('Deploy'){
+      steps{
+        echo "Deploying to Stage Environment for more tests!";
+        bat 'Deploy.bat'
+      }
+    }
+  }
+}
