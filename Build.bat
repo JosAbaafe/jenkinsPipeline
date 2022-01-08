@@ -1,0 +1,1 @@
+echo "Successfully Runned Build.bat at: %time% : %date%"

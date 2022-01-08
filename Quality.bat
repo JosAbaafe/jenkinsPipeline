@@ -1,0 +1,1 @@
+echo "Successfully Runned Quality.bat at: %time% : %date%"
