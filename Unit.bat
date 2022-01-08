@@ -1,1 +1,1 @@
-echo "Successfully Runned Unit.bat at: %time% : %date%
+echos "Successfully Runned Unit.bat at: %time% : %date%"
